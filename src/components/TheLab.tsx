@@ -14,12 +14,19 @@ const projects = [
     description: "PhishGuard is a web + mobile based application that helps users to identify phishing websites , mails , sms , QR codes , pdfs etc. ",
     risk: "High",
     tech: ["Typescript", "React", "Node.js", "Firebase", "API keys"],
+    link: "https://phishguard7.vercel.app/",
   },
   {
     title: "Traveller's Companion",
     description: "Traveller's Companion is a mobile + web application that helps users to plan their trips and find the best places to visit. This app contains map services that can help users to find transportaion, hotels, restaurants, etc.",
-    risk: "Medium",
     tech: ["Flutter", "Firebase"],
+    link: "",
+  },
+  {
+    title: "Secure Communication Platform",
+    description: "Developed an encryption tool where passphrases never leave the device, ensuring local-only decryption.Implemented a Share Token system allowing users to exchange encrypted messages securely via passphrases.",
+    tech: ["Python", "AES Encryption", "Flask"],
+    link: "https://secure-communicator.vercel.app/",
   },
   /*
   {
@@ -84,10 +91,25 @@ const TheLab = () => {
                   </span>
                 ))}
               </div>
-              <button className="neon-flicker inline-flex w-fit items-center gap-2 rounded-md border border-primary/30 bg-primary/5 px-4 py-2 font-mono text-xs text-primary transition-all hover:bg-primary hover:text-primary-foreground">
-                <FileText className="h-3 w-3" />
-                View Report
-              </button>
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="neon-flicker inline-flex w-fit items-center gap-2 rounded-md border border-primary/30 bg-primary/5 px-4 py-2 font-mono text-xs text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+                >
+                  <FileText className="h-3 w-3" />
+                  View Project
+                </a>
+              ) : (
+                <button
+                  disabled
+                  className="inline-flex w-fit items-center gap-2 rounded-md border border-primary/30 bg-primary/5 px-4 py-2 font-mono text-xs text-primary opacity-50 cursor-not-allowed"
+                >
+                  <FileText className="h-3 w-3" />
+                  Coming Soon
+                </button>
+              )}
             </div>
           ))}
         </div>
